@@ -1,0 +1,143 @@
+/** @format */
+
+/* Reset default margin and set font family for the body */
+body {
+  margin: 0;
+  font-family: 'FarAwayGalaxy', sans-serif;
+}
+
+// Global styles
+* {
+  box-sizing: border-box; /* Ensures padding and borders are included in the total width and height */
+}
+
+// Header styles
+.header {
+  background-color: #dde3ea; /* Light gray background for the header */
+  height: 20em; /* Fixed height for the header */
+  display: flex; /* Flexbox for layout */
+
+  // Responsive adjustments for smaller screens
+  @media (max-width: 768px) {
+    height: 35vh; /* Change height to 35vh for mobile */
+  }
+}
+
+// Search bar styles
+.search-bar {
+  display: flex; /* Flexbox for the search bar layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  margin: auto; /* Center the search bar */
+  width: 63vw; /* Set width of the search bar */
+
+   // Responsive adjustments for smaller screens
+   @media (max-width: 768px) {
+      width: 90vw; /* Change width to 90vw for mobile */
+    }
+
+  // Wrapper for the search bar input and icon
+  &__wrapper {
+    background-color: #ffffff; /* White background for the wrapper */
+    margin: auto; /* Center the wrapper */
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center items vertically */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the wrapper */
+    width: 63vw; /* Set width of the wrapper */
+    height: fit-content; /* Adjust height to fit content */
+
+    // Responsive adjustments for smaller screens
+    @media (max-width: 768px) {
+      width: 100%; /* Full width for mobile */
+    }
+  }
+
+  // Icon styling
+  &__icon {
+    width: 20px; /* Set width for the search icon */
+    height: 20px; /* Set height for the search icon */
+    background-image: url('/public/search-svgrepo-com.svg'); /* Background image for the icon */
+    background-size: contain; /* Scale image to fit */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    margin-right: 10px; /* Space between icon and input */
+  }
+
+  // Input field styling
+  input {
+    flex: 1; /* Allow input to grow and fill available space */
+    border: none; /* Remove default border */
+    outline: none; /* Remove default outline */
+    padding: 10px; /* Padding inside the input */
+    font-size: 1rem; /* Font size for input */
+    color: #000000; /* Text color */
+
+    // Placeholder styling
+    &::placeholder {
+      color: #000000af; /* Light gray color for placeholder text */
+    }
+
+    // Responsive adjustments for smaller screens
+    @media (max-width: 768px) {
+      font-size: 1rem; /* Font size for mobile */
+      padding: 8px; /* Padding adjustments for mobile */
+      width: 100%; /* Full width for mobile */
+    }
+  }
+}
+
+// Main content styles
+.main {
+  background-color: transparent; /* Transparent background */
+  margin: auto; /* Center the main content */
+  max-width: 55vw; /* Set maximum width for the main content */
+
+  // Responsive adjustments for smaller screens
+  @media (max-width: 768px) {
+    max-width: 90vw; /* Change max-width to 90vw for mobile */
+  }
+}
+
+/* Styles for displaying search results */
+.search-results {
+  font-size: 2rem; /* Font size for search results */
+  color: #000000; /* Text color for search results */
+
+  // Additional styles for the search term
+  &__term {
+     color: gray; /* Gray color for the search term */
+  }
+
+  // Responsive adjustments for smaller screens
+  @media (max-width: 768px) {
+    font-size: 1rem; /* Font size for mobile */
+  }
+}
+
+/* Styles for loading skeleton */
+.loading-skeleton {
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Stack skeletons vertically */
+  gap: 1em; /* Space between skeletons */
+}
+
+/* Individual skeleton card styles */
+.skeleton-card {
+  background-color: #e0e0e0; /* Skeleton color */
+  height: 20em; /* Fixed height for skeleton cards */
+  border-radius: 10px; /* Rounded corners */
+  animation: pulse 1.5s infinite; /* Animation for the skeleton effect */
+}
+
+/* Pulse animation for the loading skeleton */
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0; /* Start color */
+  }
+  50% {
+    background-color: #f0f0f0; /* Lighten color in the middle of the animation */
+  }
+  100% {
+    background-color: #e0e0e0; /* End color */
+  }
+}
